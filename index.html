@@ -13,7 +13,7 @@
         margin: 0;
         font-size: 1.5em;
         text-align: center;
-        background: 'skyblue';
+        background: black;
         color: #fff;
       }
 
@@ -24,18 +24,32 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-    // JAVASCRIPT AND REACT CODE
-      
-      //IMPORTANTE: NO QUITAR LINEA
+    
       const {useState, useEffect} = React
 
-      function Game() {
-        
+      function Juego_cartas() {
+        const [cartas, setCartas] = useState([])
+        const [cartaElegida1, setCartaElegida1] = useState(null)
+        const [cartaElegida2, setCartaElegida2] = useState(null)
+        const [terminoJuego, setTerminoJuego] = useState(false)
+        const [cantMovimiento, setCantMovimientos] = useState(0)
+
+        return (
+          <div className='Main'>
+            <h1>Juego de cartas</h1>
+            <h2>Cantidad de movimientos: {cantMovimiento}</h2>
+            <div className="card-section">
+              
+            </div>
+            <button>Empezar de nuevo</button>
+          
+          </div>
+        )
       }
 
     
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<Game/>);
+      root.render(<Juego_cartas/>);
     </script>
   </body>
 </html>
