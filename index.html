@@ -17,7 +17,20 @@
         color: #fff;
       }
 
-      
+      .cartasSection {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        
+      }
+
+      .cartaIndividual div {
+        width: 100%;
+        display: block;
+        border-radius: 6px;
+      }
 
     </style>
   </head>
@@ -26,6 +39,15 @@
     <script type="text/babel">
     
       const {useState, useEffect} = React
+
+      function Carta () {
+
+          return (
+            <div className="cartaIndividual">
+              <img src="https://upload.wikimedia.org/wikipedia/en/e/e7/Steve_%28Minecraft%29.png"/>
+            </div>
+          )
+        }
 
       function Juego_cartas() {
         const [cartas, setCartas] = useState([])
@@ -38,8 +60,13 @@
           <div className='Main'>
             <h1>Juego de cartas</h1>
             <h2>Cantidad de movimientos: {cantMovimiento}</h2>
-            <div className="card-section">
-              
+            <div className="cartasSection">
+              <Carta />
+              <Carta />
+              <Carta />
+              <Carta />
+              <Carta />
+              <Carta />
             </div>
             <button>Empezar de nuevo</button>
           
@@ -47,7 +74,6 @@
         )
       }
 
-    
       const root = ReactDOM.createRoot(document.getElementById("root"));
       root.render(<Juego_cartas/>);
     </script>
