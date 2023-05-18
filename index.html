@@ -182,7 +182,7 @@
         const [cantMovimiento, setCantMovimientos] = useState(0)
         const [desactivado, setDesactivado] = useState(false)
 
-        const ver_status = () => {
+        const checkStatus = () => {
           let Contador = 0
           cartas.forEach(card => {
             console.log(card.matched.toString())
@@ -252,16 +252,16 @@
         }, [])
 
         useEffect(() => {
-          ver_status()
+          checkStatus()
         }, [cartaElegida1, cartaElegida2])
 
         useEffect(() => {
-          if(ver_status()===12){
+          if(checkStatus()===12){
             setTerminoJuego(true)
             setTimeout(() => console.log(`Juego Finalizado: ${terminoJuego.toString()}`), 1000)
           }
         }, 
-        [ver_status()])
+        [checkStatus()])
 
         return (
           <div className='Main'>
